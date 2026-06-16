@@ -1,0 +1,39 @@
+{
+  "data_dir": "data/processed/kaggle_freshness_structured",
+  "base_args": {
+    "epochs": 35,
+    "batch_size": 32,
+    "lr": 0.001,
+    "backbone_lr": 0.0001,
+    "num_workers": 5,
+    "freeze_backbone": false,
+    "optimizer": "sgd",
+    "use_lr_scheduler": true,
+    "use_advanced_aug": true,
+    "use_mixup": true,
+    "use_cutmix": true
+  },
+  "models": [
+    {
+      "model": "efficientnet_b2",
+      "epochs": 40,
+      "lr": 0.001,
+      "backbone_lr": 0.0001,
+      "comment": "Best general-purpose model for fruit freshness"
+    },
+    {
+      "model": "resnet18",
+      "epochs": 35,
+      "lr": 0.001,
+      "backbone_lr": 0.0001,
+      "comment": "Lightweight and fast"
+    },
+    {
+      "model": "convnext_tiny",
+      "epochs": 40,
+      "lr": 0.0008,
+      "backbone_lr": 0.00008,
+      "comment": "Modern architecture, slower but more accurate"
+    }
+  ]
+}
